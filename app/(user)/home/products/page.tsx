@@ -20,11 +20,11 @@ interface item{
 
 export default async function page(params:any) {
   let URL=process.env.NEXT_PUBLIC_URL
-  let token:any=cookies().get("token")
+  let token=process.env.NEXT_PUBLIC_TOKEN
   let search:string=params.searchParams.str
 let res=await fetch(`${URL}/products?limit=50`,{method:"GET",
   headers:{
-    'Authorization':`Bearer ${token?.value}`,
+    'Authorization':`Bearer ${token}`,
     'Content-Type': 'application/json' 
 },
 next:{revalidate:120}//second
@@ -39,7 +39,7 @@ let data2= data.products
 'https://dummyjson.com/products/search?q=phone'
 let resSearch=await fetch(`${URL}/products/search?q=${search}`,{method:"GET",
   headers:{
-    'Authorization':`Bearer ${token?.value}`,
+    'Authorization':`Bearer ${token}`,
     'Content-Type': 'application/json' 
   },
 }

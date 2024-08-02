@@ -6,7 +6,7 @@ import { cookies } from 'next/headers';
 
 export default async function Page(params:any) {
     let id=params.params.item
-    let token:any=cookies().get("token")
+    let token=process.env.NEXT_PUBLIC_TOKEN
     let URL=process.env.NEXT_PUBLIC_URL
 
 

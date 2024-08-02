@@ -20,13 +20,13 @@ interface item{
 
 
 export default async function page(params:any) {
-    let token=cookies().get('token')
+  let token=process.env.NEXT_PUBLIC_TOKEN
     let URL=process.env.NEXT_PUBLIC_URL
     let category=params.params.category
     let res=await fetch(`${URL}/products/category/${category}`, {
       method: "GET",
       headers: {
-        'Authorization': `Bearer ${token?.value}`,
+        'Authorization': `Bearer ${token}`,
         'Content-Type': 'application/json'
       },
       next: { revalidate: 120 }//second
