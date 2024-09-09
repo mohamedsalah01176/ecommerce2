@@ -18,39 +18,45 @@ body{
 }
 
 .scrollbar-none {
-    scrollbar-width: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+.rtl {
+  direction: rtl;
+}
+
+.swiper-container.swiper-rtl {
+  direction: rtl;
   }
   
-  .scrollbar-none::-webkit-scrollbar {
-    display: none;
-  }
-
-  .rtl {
-    direction: rtl;
-  }
   
-  .swiper-container.swiper-rtl {
-    direction: rtl;
-  }
-
   
-
-
+  
   /* ============scrollBar============ */
-
+  
   /* width */
-.scrollBar::-webkit-scrollbar {
-  width: 15px;
+  .scrollBar::-webkit-scrollbar {
+    width: 15px;
+  }
+  
+  /* Track */
+  .scrollBar::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+  }
+  
+  /* Handle */
+  .scrollBar::-webkit-scrollbar-thumb {
+    background: black;
+    border-radius: 10px; 
 }
 
-/* Track */
-.scrollBar::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey;
-}
 
-/* Handle */
-.scrollBar::-webkit-scrollbar-thumb {
-  background: black;
-  border-radius: 10px; 
+.arrowDown{
+  border-width:"13px ";
+  border-style:'solid';
+  border-color:"red";
 }
-

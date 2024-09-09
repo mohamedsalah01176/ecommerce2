@@ -2,13 +2,10 @@
 import "./globals.css";
 import transitionEN from "./translate/en.json"
 import transitionAR from "./translate/ar.json"
-
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import { Provider } from "react-redux";
 import store from "./redux/store";
-
-
 import 'aos/dist/aos.css';
 
 
@@ -53,12 +50,15 @@ export default function RootLayout({
           <head>
             <title>Ecommerce</title>
             <meta name="ecommerce" content="this is ecommerce content products,Discover our wide selection of men's running shoes. Shop now for free shipping and easy returns"></meta>
-            <meta name="robots" content="index, follow"></meta>
-            <meta property="og:Store for buying products" content="Buy Men's Running Shoes | Brand Name"></meta>
-            <meta property="twitter:Store for buying products" content="Buy Men's Running Shoes | Brand Name"></meta>
+            <meta name="robots" content="index, follow"/>
+            <meta property="og:Store for buying products" content="Buy Men's Running Shoes | Brand Name"/>
+            <meta property="twitter:Store for buying products" content="Buy Men's Running Shoes | Brand Name"/>
+            <meta name="google-site-verification" content="+nxGUDJ4QpAZ5l9Bsjdi102tLVC21AIh5d1Nl23908vVuFHs34="/>
+            <meta name="robots" content="noindex,nofollow"/>
+            <meta name="author" content="Mohamed Salah"/>
           </head>
           <body className='' >
-
+    
               {children}
             </body>
         </html>

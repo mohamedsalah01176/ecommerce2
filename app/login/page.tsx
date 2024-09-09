@@ -70,7 +70,7 @@ export default function Page() {
       setOpen(false);
     };
   return (
-    <div className='bg-black min-h-screen overflow-y-hidden mt-[96px] flex flex-col  justify-center items-center'>
+    <div className='bg-black min-h-screen overflow-y-hidden flex flex-col  justify-center items-center'>
         <form action="" onSubmit={handelLogin} className='flex flex-col w-[300px] gap-5 items-center -translate-y-7 '>
             <h1 className='text-4xl font-bold text-white mb-1 '>{t("Login")}</h1>
             <input type="text" placeholder={t('email')} className='p-3 text-black font-light border-none outline-none rounded-3xl w-full' onChange={(e:any)=>setEmail(e.target.value)} />

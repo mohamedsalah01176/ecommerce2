@@ -4,7 +4,7 @@ import Slider from "./component/Slider";
 import { dataSlideHome } from "../../helpers/DataSliderHome";
 import Category from "./component/Category";
 import Offers from "./component/Offers";
-import Title from "./component/Title";
+import Title from "./component/Title"; 
 
 
 export  default async function page() {
@@ -20,7 +20,6 @@ export  default async function page() {
   });
   let dataOffers=await resOffers.json()
   
-  console.log(dataOffers)
 
   let resCategory=await fetch(`${URL}/products/category-list`, { 
     method: "GET",
