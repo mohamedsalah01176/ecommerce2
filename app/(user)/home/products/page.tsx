@@ -19,7 +19,7 @@ interface item{
   price:number
 }
 
-export default async function page(params) {
+export default async function page(params:any) {
   let URL=process.env.NEXT_PUBLIC_URL
   let token=process.env.NEXT_PUBLIC_TOKEN
   let search:string=params.searchParams.str
@@ -55,7 +55,7 @@ let product=search?dataSearch.products:data2
     <div>
         <Title title={"products"}/>
 
-        {product.length >0?
+        {product?.length >0?
           <div className='mb-7'>
             <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 p-10 xl:p-20 mt-5 '>
         

@@ -26,7 +26,7 @@ interface itemTotal{
     quantity:number
     price:number,
 }
-export default function Cart({setOpenLinks}:any) {
+export default function Cart({setOpenLinks,openLinks}:any) {
     let {t,i18n}=useTranslation()
     const [dataCart,setDataCart]=useState<any>([])
     const [updata,setUpdata]=useState<boolean>(false)
@@ -81,7 +81,7 @@ export default function Cart({setOpenLinks}:any) {
 
   return (
     <>
-    <div className={`bg-white min-w-[250px] sm:min-w-[300px] p-3 absolute top-[50px] right-[50%] translate-x-[50%] rounded-lg text-center z-10  `}>
+    <div className={`${openLinks?'opacity-1 scale-100':'opacity-0 -order-5 scale-0 -translate-y-52 '} transition-all duration-300 bg-white min-w-[250px] sm:min-w-[300px] p-3 absolute top-[50px] right-[50%] translate-x-[50%] rounded-lg text-center z-10  `}>
         <div className=' absolute  top-[-10px] left-[50%] translate-x-[-50%] ' style={{borderWidth:"10px" ,borderStyle:"solid",borderColor:"transparent transparent black transparent"}}></div>
         <h2 className='font-semibold text-lg my-2'>{t('yourCart')}</h2>
         <div className='flex flex-col items-center gap-3 max-h-[300px] overflow-y-scroll scrollbar-none'>{/* style scrollbar from app.css */}

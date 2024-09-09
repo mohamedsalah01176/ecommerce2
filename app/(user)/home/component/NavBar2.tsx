@@ -78,11 +78,7 @@ export default function NavBar2(params:any) {
                 <div className="absolute -top-1 -right-2 bg-black p-2 rounded-full w-[20px] h-[20px] text-sm font-bold flex items-start ">
                     <span className='-top-[5%] right-[30%] absolute text-white'>{dataCart?.length}</span>
                 </div>
-                {openLinks === true?
-                    <Cart setOpenLinks={setOpenLinks} />
-                :
-                null
-            }
+                    <Cart openLinks={openLinks} setOpenLinks={setOpenLinks} />
             </div>
             <div className='flex items-center justify-center flex-wrap gap-2 text-center '>
                 <Image width={200} height={200} src={image?image:"/R.png"} alt="aaa" className='w-[50px] h-[50px] rounded-full' />

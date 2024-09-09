@@ -51,17 +51,14 @@ export default function NavBar1() {
   return (
     <div className='bg-black text-white p-7 fixed w-full top-0 left-0 z-40' >
         <div className='container flex justify-between items-center '>
-            <div className="text-4xl font-semibold hover:scale-110 ">
+            <div className="text-4xl font-semibold hover:scale-110 transition-all duration-300 cursor-pointer " onClick={()=>nav.push('/home')}>
                 MS
             </div>
             {token ?
             <>
                 <div className='lg:hidden relative  transition-all duration-700 '>
                     <FaBars onClick={()=>setOpenLinks(!openLinks)} className=' text-3xl font-semibold cursor-pointer '/>
-                        {/* {openLinks === true? */}
                         <FloatLinks openLinks={openLinks}/>
-                        {/* : */}
-                        {/* ""} */}
                 </div>
                 <ul className=' items-center gap-7 text-lg font-semibold hidden lg:flex'>
                     <li className='hover:scale-110 transition-all duration-300'>
