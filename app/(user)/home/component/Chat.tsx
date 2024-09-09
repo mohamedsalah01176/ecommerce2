@@ -48,7 +48,7 @@ export default function Chat() {
       h2Element.style.margin='7px 0'
     }
     let input:any=document.getElementById('input')
-    input.innerHTML=''
+    input.value=''
     
 
     //api send requist for backend 
@@ -83,9 +83,7 @@ export default function Chat() {
         <div className="p-3 bg-black text-white rounded-full cursor-pointer hover:scale-110 transition-all duration-300" onClick={()=>setOpenChate(!openChat)}>
             <IoChatbubblesSharp className="text-3xl  font-semibold"/>
         </div>
-        {openChat &&
-          <>
-            <div className="absolute bottom-[130%] right-[26%] p-2 bg-slate-300 h-[350px] w-[280px] rounded-lg  ">
+            <div className={`absolute bottom-[130%] right-[26%] p-2 bg-slate-300 h-[350px] w-[280px] rounded-lg transition-all duration-500  ${openChat?'opacity-1 scale-100 ':'opacity-0 -order-5 scale-0 translate-y-52 translate-x-32'} `}>
               <div id="conChat" className="overflow-y-scroll h-[280px] scrollbar-none">
                 {testArrayFromBackend.map((item,index)=>{
                   return <h2 key={index} className="mb-2 text-sm text-white w-fit p-1 bg-black my-3 rounded-lg" >{item}</h2>
@@ -96,9 +94,7 @@ export default function Chat() {
                   <button type="submit" className=" bg-black p-1 rounded-lg text-white">send</button>
                 </form>
             </div>
-            <div className="w-5 absolute bottom-[75%] right-4 border-[16px]   border-t-slate-300 border-transparent border-solid "></div>
-          </>
-        }
+            <div className={`w-5 absolute bottom-[75%] right-4 border-[16px]   border-t-slate-300 border-transparent border-solid transition-all duration-500  ${openChat?'opacity-1 scale-100 ':'opacity-0 -order-5 scale-0 translate-y-3 translate-x-3'}`}></div>
     </div>
   )
 }

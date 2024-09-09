@@ -3,6 +3,7 @@ import { cookies } from 'next/headers'
 import NoFound from '../component/NoFound'
 import Title from '../component/Title'
 import Card from '../component/Card'
+import Pagination from '../component/Pagination'
 
 
 
@@ -18,11 +19,12 @@ interface item{
   price:number
 }
 
-export default async function page(params:any) {
+export default async function page(params) {
   let URL=process.env.NEXT_PUBLIC_URL
   let token=process.env.NEXT_PUBLIC_TOKEN
   let search:string=params.searchParams.str
-let res=await fetch(`${URL}/products?limit=50`,{method:"GET",
+  let numSkipProduct=params.searchParams.numSkip
+let res=await fetch(`${URL}/products?limit=10&skip=${numSkipProduct}`,{method:"GET",
   headers:{
     'Authorization':`Bearer ${token}`,
     'Content-Type': 'application/json' 
@@ -35,8 +37,6 @@ let data=await res.json()
 let data2= data.products
 
 
-// let item=data2.filter((item:{title:string})=>item.title.toLowerCase().indexOf(search?.toLowerCase()) !==-1)
-'https://dummyjson.com/products/search?q=phone'
 let resSearch=await fetch(`${URL}/products/search?q=${search}`,{method:"GET",
   headers:{
     'Authorization':`Bearer ${token}`,
@@ -46,7 +46,7 @@ let resSearch=await fetch(`${URL}/products/search?q=${search}`,{method:"GET",
 )
 
 let dataSearch=await resSearch.json()
-console.log(dataSearch.products)
+ 
 
 let product=search?dataSearch.products:data2
   return (
@@ -56,12 +56,15 @@ let product=search?dataSearch.products:data2
         <Title title={"products"}/>
 
         {product.length >0?
-        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 p-10 xl:p-20 mt-5 '>
-    
-    
-        <Card data={product}/>
+          <div className='mb-7'>
+            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 p-10 xl:p-20 mt-5 '>
         
-        </div>
+        
+            <Card data={product}/>
+            </div>
+            <Pagination/>
+          </div>
+        
         :
         <>
           <NoFound title={search}/>

@@ -115,7 +115,7 @@ export default function Card({data}:any) {
             </div>
 
         </div>
-            <button onClick={()=>{token?handleQuantityChange(item.id,1):nav.push('/');setClick(true)}}  className='py-2 px-4 bg-gray-700 hover:bg-black rounded-lg transition2 text-white  w-fit mx-auto absolute  left-[50%] translate-x-[-50%]  '>{t("ADD TO CART")}</button>
+            <button onClick={()=>{token?handleQuantityChange(item.id,1):nav.push('/');setClick(true)}}  className='py-2 px-4 bg-gray-700 hover:bg-black rounded-lg transition2 text-white  min-w-[150px] mx-auto absolute  left-[50%] translate-x-[-50%]  '>{t("ADD TO CART")}</button>
     </div>
     
     )

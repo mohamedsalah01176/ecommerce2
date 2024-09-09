@@ -58,10 +58,10 @@ export default function NavBar1() {
             <>
                 <div className='lg:hidden relative  transition-all duration-700 '>
                     <FaBars onClick={()=>setOpenLinks(!openLinks)} className=' text-3xl font-semibold cursor-pointer '/>
-                        {openLinks === true?
-                        <FloatLinks/>
-                        :
-                        ""}
+                        {/* {openLinks === true? */}
+                        <FloatLinks openLinks={openLinks}/>
+                        {/* : */}
+                        {/* ""} */}
                 </div>
                 <ul className=' items-center gap-7 text-lg font-semibold hidden lg:flex'>
                     <li className='hover:scale-110 transition-all duration-300'>
