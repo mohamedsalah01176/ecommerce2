@@ -82,7 +82,7 @@ export default function NavBar1() {
             :
             <div >
                 <Link href='/login' className='py-2 mx-3 px-4 bg-sky-700 rounded-md hover:bg-sky-600 transition-all duration-300'>{t("Login")}</Link>
-                <Link href='/register' className='py-2 px-4 bg-green-700 rounded-md hover:bg-green-600 transition-all duration-300'>{t("register")}</Link>
+                <Link href='/' className='py-2 px-4 bg-green-700 rounded-md hover:bg-green-600 transition-all duration-300'>{t("register")}</Link>
             </div>
             }
 

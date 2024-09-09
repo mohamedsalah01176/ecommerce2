@@ -43,7 +43,7 @@ export default function Slider({sliderHome}:any) {
         <div className='absolute top-[50%] right-[12%]  z-10 text-white w-[300px] text-right' >
               <h1 className='text-4xl font-semibold mb-2'>{t(item.title)} </h1>
               <h1 className='text-2xl mb-2'>{t(item.discription)}</h1>
-              <div onClick={()=>{token?nav.push('/home/products'):nav.push('/home')}}  className='py-2 cursor-pointer  mx-auto  px-3  text-lg w-fit bg-gray-800 rounded-lg text-white hover:bg-gray-900 transition2 '>{t("shop")}</div>
+              <div onClick={()=>{token?nav.push('/home/products'):nav.push('/')}}  className='py-2 cursor-pointer  mx-auto  px-3  text-lg w-fit bg-gray-800 rounded-lg text-white hover:bg-gray-900 transition2 '>{t("shop")}</div>
         </div>
       </SwiperSlide>
     )

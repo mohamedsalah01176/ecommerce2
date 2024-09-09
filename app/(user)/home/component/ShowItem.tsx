@@ -137,7 +137,7 @@ export default function ShowItem({product}:props) {
         <div className='flex justify-center lg:justify-between gap-5 items-center flex-wrap'>
         </div>
           <div className='flex justify-between items-center'>
-            <button onClick={()=>{token?addArray(product.id):nav.push('/register')}}  className='py-2 px-4 bg-gray-800 hover:bg-black rounded-lg transition2 text-white text-lg w-fit '>{t("ADD TO CART")}</button>
+            <button onClick={()=>{token?addArray(product.id):nav.push('/')}}  className='py-2 px-4 bg-gray-800 hover:bg-black rounded-lg transition2 text-white text-lg w-fit '>{t("ADD TO CART")}</button>
             <div className='flex items-center gap-1'>
               <button className='bg-black  text-3xl font-bold text-white rounded-full w-[40px] h-[40px]' onClick={()=>setQuantity(quantity+1)}>+</button>
               <input title='Enter quantity' type='text' value={quantity} onChange={(e:any)=>setQuantity(e.target.value)} className='border max-w-[70px] p-2'/>

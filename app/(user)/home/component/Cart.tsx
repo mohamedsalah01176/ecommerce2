@@ -109,7 +109,7 @@ export default function Cart({setOpenLinks}:any) {
         </div>
         <div className=' mt-5'>
             <div className='flex justify-between items-center text-xl'><span className='font-light'>Total </span> <span className='font-semibold'>${total(dataCart)}</span></div>
-            <button onClick={()=>{token?setOpenFeature(true):nav.push('/register')}} className='text-white bg-gray-800 px-4 py-2 rounded-md mt-3 hover:bg-gray-700 transition2-all duration-300 '>{t("checkout")}</button>
+            <button onClick={()=>{token?setOpenFeature(true):nav.push('/')}} className='text-white bg-gray-800 px-4 py-2 rounded-md mt-3 hover:bg-gray-700 transition2-all duration-300 '>{t("checkout")}</button>
         </div>
         
 
