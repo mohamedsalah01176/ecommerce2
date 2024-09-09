@@ -48,7 +48,7 @@ export default function Chat() {
       h2Element.style.margin='7px 0'
     }
     let input:any=document.getElementById('input')
-    input.innerHTML=''
+    input.value=''
     
 
     //api send requist for backend 
