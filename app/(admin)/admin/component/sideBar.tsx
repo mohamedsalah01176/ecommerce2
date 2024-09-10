@@ -13,7 +13,7 @@ import Link from 'next/link';
 export default function SideBar({setOpenSlider,openSlider}:any) {
   return (
     <div className={ `min-w-[150px] sm:min-w-[220px] min-h-screen fixed top-[106px]  text-slate-600 transition-all duration-300 ${openSlider?'left-0':'-left-[160px] sm:-left-[220px]'} `}>
-      <div className=' cursor-pointer absolute top-14 -right-5' onClick={()=>setOpenSlider(!openSlider)}>
+      <div className='bg-white cursor-pointer absolute top-14 -right-5' onClick={()=>setOpenSlider(!openSlider)}>
         <IoMdSettings className='text-3xl p-1 hover:rotate-180 transition-all duration-500 '/>
       </div>
       <div className='space-y-1 border-b-2 border-slate-300 p-2'>
