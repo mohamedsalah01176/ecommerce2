@@ -58,9 +58,7 @@ let nav=useRouter()
         reader.readAsDataURL(file);
     }
   
-    console.log(validPassword)
     function handleRegister(e:any){
-      console.log(image)
       e.preventDefault()
       // setDone(true)
 
@@ -71,6 +69,7 @@ let nav=useRouter()
         cookies.set('password',password)
         cookies.set('typeUser',TypeUser)
         localStorage.setItem('image',image)
+        setError('')
         setSucces('email creayed')
         setTimeout(()=>{nav.push('/login')},1500)
       }else if(userName.length <=3 ){

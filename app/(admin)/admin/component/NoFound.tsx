@@ -8,6 +8,6 @@ interface props{
 export default function NoFound({title}:props) {
     const {t}=useTranslation()
   return (
-    <div className='text-5xl flex justify-center items-center text-red-600 font-semibold'>{t("noFound")} {t(title)}</div>
+    <div className='text-4xl flex justify-center items-center text-red-600 font-semibold'>{t("noFound")} {t(title)}</div>
   )
 }

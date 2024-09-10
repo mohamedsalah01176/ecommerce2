@@ -4,13 +4,18 @@ import { CiShop } from "react-icons/ci";
 import { TbShoppingCartDown } from "react-icons/tb";
 import { MdOutlinePayment } from "react-icons/md";
 import { HiOutlineUsers } from "react-icons/hi2";
+import { IoMdSettings } from "react-icons/io";
+
 import Link from 'next/link';
 
 
 
-export default function SideBar() {
+export default function SideBar({setOpenSlider,openSlider}:any) {
   return (
-    <div className='min-w-[150px] sm:min-w-[220px] min-h-screen fixed top-[106px] left-0 text-slate-600 '>
+    <div className={ `min-w-[150px] sm:min-w-[220px] min-h-screen fixed top-[106px]  text-slate-600 transition-all duration-300 ${openSlider?'left-0':'-left-[160px] sm:-left-[220px]'} `}>
+      <div className=' cursor-pointer absolute top-14 -right-5' onClick={()=>setOpenSlider(!openSlider)}>
+        <IoMdSettings className='text-3xl p-1 hover:rotate-180 transition-all duration-500 '/>
+      </div>
       <div className='space-y-1 border-b-2 border-slate-300 p-2'>
         <Link href={'/admin'} className='flex items-center justify-center gap-2 hover:bg-[#7364db] hover:text-white transition-all duration-300 rounded-lg p-3 cursor-pointer'>
           <MdOutlineDashboard className='text-3xl font-semibold'/>

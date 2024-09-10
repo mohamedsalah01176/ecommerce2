@@ -15,6 +15,7 @@ export default function Layout({
 }>){
   let path=usePathname()
   const[position,setPosition]=useState(0)
+  let {t,i18n}=useTranslation()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,7 +38,7 @@ export default function Layout({
 
 
 
-let {t,i18n}=useTranslation()
+
 
 
   return (
@@ -52,6 +53,7 @@ let {t,i18n}=useTranslation()
           :
           <NavBar2 />
         }
+        
         <div className="min-h-screen  w-full ">
           {children}
         </div>

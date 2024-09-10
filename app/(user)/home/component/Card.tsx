@@ -60,7 +60,6 @@ export default function Card({data}:any) {
             : cartItem
         ));
       }else{
-        console.log("lll")
           setCart((prevState:any)=>[...prevState , {...item,quantity:1}])
       }
 
