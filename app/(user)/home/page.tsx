@@ -1,5 +1,3 @@
-
-import { cookies } from "next/headers"
 import Slider from "./component/Slider";
 import { dataSlideHome } from "../../helpers/DataSliderHome";
 import Category from "./component/Category";

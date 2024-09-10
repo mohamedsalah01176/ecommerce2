@@ -1,7 +1,6 @@
 "use client"
 import { useEffect, useState } from 'react'
 import { FaSearch } from "react-icons/fa";
-import { FaRegHeart } from "react-icons/fa";
 import { LuShoppingCart } from "react-icons/lu";
 import { usePathname, useRouter } from 'next/navigation.js';
 import Cart from './Cart';
@@ -10,7 +9,7 @@ import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
-export default function NavBar2(params:any) {
+export default function NavBar2() {
     const [openLinks ,setOpenLinks]=useState(false)
     const [image ,setImage]=useState<any>('')
     const [fristName ,setFristName]=useState<string>()
@@ -81,7 +80,7 @@ export default function NavBar2(params:any) {
                     <Cart openLinks={openLinks} setOpenLinks={setOpenLinks} />
             </div>
             <div className='flex items-center justify-center flex-wrap gap-2 text-center '>
-                <Image width={200} height={200} src={image?image:"/R.png"} alt="aaa" className='w-[50px] h-[50px] rounded-full' />
+                <Image width={50} height={50} src={image?image:"/R.webp"} alt="aaa" className='w-[50px] h-[50px] rounded-full' />
                 <h1 className='w-[150px] sm:w-fit overflow-x-scroll sm:overflow-x-auto'>{fristName}</h1>
                 
             </div>

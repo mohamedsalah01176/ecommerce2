@@ -11,7 +11,9 @@ export default function layout({
     <div>
         <NavBarAdmin/>
         <SideBar/>
-        {children}
+        <div className='ml-[150px] sm:ml-[220px] mt-[115px]'>
+          {children}
+        </div>
     </div>
   )
 }

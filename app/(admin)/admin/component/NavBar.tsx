@@ -25,13 +25,13 @@ export default function NavBarAdmin() {
 
     function handelSearch(){
         if(search){
-            nav.push(`/products?str=${search.toLowerCase()}`)
+            nav.push(`/admin/products?strAdmin=${search.toLowerCase()}`)
         }
         else {
-            if(params2 === "/products"){
-                nav.push(`/products`)
-            }else if(params2 === "/"){
-                nav.push(`/`)
+            if(params2 === "/admin/products"){
+                nav.push(`/admin/products`)
+            }else if(params2 === "/admin"){
+                nav.push(`/admin`)
             }
         }
     }
@@ -42,7 +42,7 @@ export default function NavBarAdmin() {
     },[search])
 
   return (
-    <div className='bg-white text-black p-7 fixed w-full top-0 left-0 z-40'>
+    <div className='bg-white text-black p-3 sm:p-6  fixed w-full h-[105px] top-0 left-0 z-40'>
 
         <div className=' flex justify-between items-center gap-3' >
                 <div className="text-4xl font-semibold hover:scale-110 ">
