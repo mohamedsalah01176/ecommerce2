@@ -23,8 +23,8 @@ export default async function page(params:any) {
   let URL=process.env.NEXT_PUBLIC_URL
   let token=process.env.NEXT_PUBLIC_TOKEN
   let search:string=params.searchParams.str
-  let numSkipProduct=params.searchParams.numSkip
-let res=await fetch(`${URL}/products?limit=10&skip=${numSkipProduct}`,{method:"GET",
+  let numSkipProduct=params.searchParams.numSkip?params.searchParams.numSkip:0
+  let res=await fetch(`${URL}/products?limit=10&skip=${numSkipProduct}`,{method:"GET",
   headers:{
     'Authorization':`Bearer ${token}`,
     'Content-Type': 'application/json' 
